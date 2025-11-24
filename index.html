@@ -68,6 +68,10 @@
       font-size: 22px;
     }
 
+    h3 {
+      margin: 8px 0 4px;
+    }
+
     .products {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -88,10 +92,6 @@
       object-fit: cover;
       border-radius: 10px;
       background: #ddd;
-    }
-
-    .card h3 {
-      margin: 10px 0 5px;
     }
 
     .price {
@@ -215,6 +215,7 @@
   <nav>
     <a href="#men">رجالي</a>
     <a href="#women">نسائي</a>
+    <a href="#bodysplash">بادي سبلاش</a>
     <a href="#cart">السلة</a>
     <a href="#checkout">شيك آوت</a>
   </nav>
@@ -236,9 +237,9 @@
       <h3>أكوا دي جيو</h3>
       <p class="price" id="price-m1">السعر: 200 جنيه</p>
       <select class="price-options" onchange="updateDisplayedPrice('m1', this)">
-        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
-        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
-        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+        <option data-price="200" data-size="30 مللي">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50 مللي">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100 مللي">100 مللي - 450 جنيه</option>
       </select>
       <button class="btn" onclick="addToCart('m1')">إضافة للسلة</button>
     </div>
@@ -248,9 +249,9 @@
       <h3>سترونجر ويذ يو</h3>
       <p class="price" id="price-m2">السعر: 200 جنيه</p>
       <select class="price-options" onchange="updateDisplayedPrice('m2', this)">
-        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
-        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
-        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+        <option data-price="200" data-size="30 مللي">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50 مللي">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100 مللي">100 مللي - 450 جنيه</option>
       </select>
       <button class="btn" onclick="addToCart('m2')">إضافة للسلة</button>
     </div>
@@ -260,9 +261,9 @@
       <h3>سوفاج</h3>
       <p class="price" id="price-m3">السعر: 200 جنيه</p>
       <select class="price-options" onchange="updateDisplayedPrice('m3', this)">
-        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
-        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
-        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+        <option data-price="200" data-size="30 مللي">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50 مللي">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100 مللي">100 مللي - 450 جنيه</option>
       </select>
       <button class="btn" onclick="addToCart('m3')">إضافة للسلة</button>
     </div>
@@ -272,9 +273,9 @@
       <h3>لاكوست الأبيض</h3>
       <p class="price" id="price-m4">السعر: 200 جنيه</p>
       <select class="price-options" onchange="updateDisplayedPrice('m4', this)">
-        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
-        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
-        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+        <option data-price="200" data-size="30 مللي">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50 مللي">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100 مللي">100 مللي - 450 جنيه</option>
       </select>
       <button class="btn" onclick="addToCart('m4')">إضافة للسلة</button>
     </div>
@@ -284,9 +285,9 @@
       <h3>توباكو فانيلا</h3>
       <p class="price" id="price-m5">السعر: 200 جنيه</p>
       <select class="price-options" onchange="updateDisplayedPrice('m5', this)">
-        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
-        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
-        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+        <option data-price="200" data-size="30 مللي">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50 مللي">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100 مللي">100 مللي - 450 جنيه</option>
       </select>
       <button class="btn" onclick="addToCart('m5')">إضافة للسلة</button>
     </div>
@@ -296,9 +297,9 @@
       <h3>الكسندريا 2</h3>
       <p class="price" id="price-m6">السعر: 200 جنيه</p>
       <select class="price-options" onchange="updateDisplayedPrice('m6', this)">
-        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
-        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
-        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+        <option data-price="200" data-size="30 مللي">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50 مللي">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100 مللي">100 مللي - 450 جنيه</option>
       </select>
       <button class="btn" onclick="addToCart('m6')">إضافة للسلة</button>
     </div>
@@ -308,9 +309,9 @@
       <h3>بلاك أفغانو</h3>
       <p class="price" id="price-m7">السعر: 450 جنيه</p>
       <select class="price-options" onchange="updateDisplayedPrice('m7', this)">
-        <option data-price="450" data-size="30">30 مللي - 450 جنيه</option>
-        <option data-price="650" data-size="50">50 مللي - 650 جنيه</option>
-        <option data-price="950" data-size="100">100 مللي - 950 جنيه</option>
+        <option data-price="450" data-size="30 مللي">30 مللي - 450 جنيه</option>
+        <option data-price="650" data-size="50 مللي">50 مللي - 650 جنيه</option>
+        <option data-price="950" data-size="100 مللي">100 مللي - 950 جنيه</option>
       </select>
       <button class="btn" onclick="addToCart('m7')">إضافة للسلة</button>
     </div>
@@ -320,9 +321,9 @@
       <h3>عود أصفهان</h3>
       <p class="price" id="price-m8">السعر: 200 جنيه</p>
       <select class="price-options" onchange="updateDisplayedPrice('m8', this)">
-        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
-        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
-        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+        <option data-price="200" data-size="30 مللي">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50 مللي">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100 مللي">100 مللي - 450 جنيه</option>
       </select>
       <button class="btn" onclick="addToCart('m8')">إضافة للسلة</button>
     </div>
@@ -342,9 +343,9 @@
       <h3>ليبر</h3>
       <p class="price" id="price-w1">السعر: 200 جنيه</p>
       <select class="price-options" onchange="updateDisplayedPrice('w1', this)">
-        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
-        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
-        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+        <option data-price="200" data-size="30 مللي">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50 مللي">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100 مللي">100 مللي - 450 جنيه</option>
       </select>
       <button class="btn" onclick="addToCart('w1')">إضافة للسلة</button>
     </div>
@@ -354,9 +355,9 @@
       <h3>كوكو دي شانيل</h3>
       <p class="price" id="price-w2">السعر: 200 جنيه</p>
       <select class="price-options" onchange="updateDisplayedPrice('w2', this)">
-        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
-        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
-        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+        <option data-price="200" data-size="30 مللي">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50 مللي">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100 مللي">100 مللي - 450 جنيه</option>
       </select>
       <button class="btn" onclick="addToCart('w2')">إضافة للسلة</button>
     </div>
@@ -366,9 +367,9 @@
       <h3>كيالي 28</h3>
       <p class="price" id="price-w3">السعر: 200 جنيه</p>
       <select class="price-options" onchange="updateDisplayedPrice('w3', this)">
-        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
-        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
-        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+        <option data-price="200" data-size="30 مللي">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50 مللي">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100 مللي">100 مللي - 450 جنيه</option>
       </select>
       <button class="btn" onclick="addToCart('w3')">إضافة للسلة</button>
     </div>
@@ -378,9 +379,9 @@
       <h3>أربابورا</h3>
       <p class="price" id="price-w4">السعر: 200 جنيه</p>
       <select class="price-options" onchange="updateDisplayedPrice('w4', this)">
-        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
-        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
-        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+        <option data-price="200" data-size="30 مللي">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50 مللي">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100 مللي">100 مللي - 450 جنيه</option>
       </select>
       <button class="btn" onclick="addToCart('w4')">إضافة للسلة</button>
     </div>
@@ -390,9 +391,9 @@
       <h3>نساء العالم</h3>
       <p class="price" id="price-w5">السعر: 200 جنيه</p>
       <select class="price-options" onchange="updateDisplayedPrice('w5', this)">
-        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
-        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
-        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+        <option data-price="200" data-size="30 مللي">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50 مللي">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100 مللي">100 مللي - 450 جنيه</option>
       </select>
       <button class="btn" onclick="addToCart('w5')">إضافة للسلة</button>
     </div>
@@ -402,9 +403,9 @@
       <h3>فيري جود جيرل</h3>
       <p class="price" id="price-w6">السعر: 200 جنيه</p>
       <select class="price-options" onchange="updateDisplayedPrice('w6', this)">
-        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
-        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
-        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+        <option data-price="200" data-size="30 مللي">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50 مللي">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100 مللي">100 مللي - 450 جنيه</option>
       </select>
       <button class="btn" onclick="addToCart('w6')">إضافة للسلة</button>
     </div>
@@ -414,9 +415,9 @@
       <h3>فيري سكس ناو</h3>
       <p class="price" id="price-w7">السعر: 200 جنيه</p>
       <select class="price-options" onchange="updateDisplayedPrice('w7', this)">
-        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
-        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
-        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+        <option data-price="200" data-size="30 مللي">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50 مللي">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100 مللي">100 مللي - 450 جنيه</option>
       </select>
       <button class="btn" onclick="addToCart('w7')">إضافة للسلة</button>
     </div>
@@ -426,15 +427,80 @@
       <h3>خمرة</h3>
       <p class="price" id="price-w8">السعر: 200 جنيه</p>
       <select class="price-options" onchange="updateDisplayedPrice('w8', this)">
-        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
-        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
-        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+        <option data-price="200" data-size="30 مللي">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50 مللي">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100 مللي">100 مللي - 450 جنيه</option>
       </select>
       <button class="btn" onclick="addToCart('w8')">إضافة للسلة</button>
     </div>
 
   </div>
   <p class="note">متاح لدينا أنواع أخرى عديدة، للتفاصيل برجاء التواصل عبر الواتساب.</p>
+</section>
+
+<!-- ========================= -->
+<!--      بادي سبلاش           -->
+<!-- ========================= -->
+<section id="bodysplash">
+  <h2>بادي سبلاش 220 مللي</h2>
+  <p class="note">متوفر 5 روائح مميزة: سويت فانيلا – فروتي ميكس – وايت مسك – روز بوكيه – كوكونت دريم.</p>
+
+  <!-- العطور نفسها (للعرض والشكل) -->
+  <div class="products">
+    <div class="card">
+      <img src="BODYSPLASH1" alt="سويت فانيلا" />
+      <h3>بادي سبلاش سويت فانيلا</h3>
+      <p>زجاجة 220 مللي – لمسة فانيلا ناعمة للجسم.</p>
+    </div>
+    <div class="card">
+      <img src="BODYSPLASH2" alt="فروتي ميكس" />
+      <h3>بادي سبلاش فروتي ميكس</h3>
+      <p>مزيج فواكه منعش يدوم طوال اليوم.</p>
+    </div>
+    <div class="card">
+      <img src="BODYSPLASH3" alt="وايت مسك" />
+      <h3>بادي سبلاش وايت مسك</h3>
+      <p>رائحة مسك بيضاء ناعمة ومريحة.</p>
+    </div>
+    <div class="card">
+      <img src="BODYSPLASH4" alt="روز بوكيه" />
+      <h3>بادي سبلاش روز بوكيه</h3>
+      <p>انتعاش باقة ورد أنثوية ومميزة.</p>
+    </div>
+    <div class="card">
+      <img src="BODYSPLASH5" alt="كوكونت دريم" />
+      <h3>بادي سبلاش كوكونت دريم</h3>
+      <p>لمسة جوز هند دافئة تناسب الصيف والشتاء.</p>
+    </div>
+  </div>
+
+  <h3 style="text-align:center; margin-top:30px;">عروض البادي سبلاش</h3>
+  <div class="products">
+    <div class="card">
+      <h3>عرض عبوة واحدة</h3>
+      <p>أي بادي سبلاش 220 مللي</p>
+      <p class="price">السعر: 200 جنيه</p>
+      <button class="btn" onclick="addBundleToCart('bs1', 'بادي سبلاش - عبوة واحدة (220 مللي)', 200)">إضافة للسلة</button>
+    </div>
+    <div class="card">
+      <h3>عرض عبوتين</h3>
+      <p>أي نوعين من البادي سبلاش 220 مللي</p>
+      <p class="price">السعر: 375 جنيه</p>
+      <button class="btn" onclick="addBundleToCart('bs2', 'عرض بادي سبلاش - عبوتين (220 مللي)', 375)">إضافة للسلة</button>
+    </div>
+    <div class="card">
+      <h3>عرض 3 زجاجات</h3>
+      <p>اختر 3 أنواع مختلفة أو متكررة</p>
+      <p class="price">السعر: 500 جنيه</p>
+      <button class="btn" onclick="addBundleToCart('bs3', 'عرض بادي سبلاش - 3 زجاجات (220 مللي)', 500)">إضافة للسلة</button>
+    </div>
+    <div class="card">
+      <h3>الباكدج الكامل</h3>
+      <p>5 زجاجات بادي سبلاش (220 مللي) بأي روائح</p>
+      <p class="price">السعر: 700 جنيه</p>
+      <button class="btn" onclick="addBundleToCart('bs4', 'باكدج كامل بادي سبلاش - 5 زجاجات (220 مللي)', 700)">إضافة للسلة</button>
+    </div>
+  </div>
 </section>
 
 <!-- ========================= -->
@@ -448,7 +514,7 @@
         <thead>
           <tr>
             <th>العطر</th>
-            <th>الحجم</th>
+            <th>الحجم / العرض</th>
             <th>الكمية</th>
             <th>سعر الوحدة</th>
             <th>الإجمالي</th>
@@ -511,13 +577,10 @@
     const name = card.querySelector('h3').textContent.trim();
     const selectEl = card.querySelector('.price-options');
     const selectedOption = selectEl.options[selectEl.selectedIndex];
-    const size = selectedOption.getAttribute('data-size');
+    const size = selectedOption.getAttribute('data-size'); // نص مثل "30 مللي"
     const price = Number(selectedOption.getAttribute('data-price')) || 0;
 
-    // نبحث لو نفس المنتج بنفس الحجم موجود
-    const existing = cart.find(
-      (item) => item.id === productId && item.size === size
-    );
+    const existing = cart.find((item) => item.id === productId && item.size === size);
 
     if (existing) {
       existing.qty += 1;
@@ -526,7 +589,18 @@
     }
 
     renderCart();
-    alert('تمت إضافة ' + name + ' (' + size + ' مللي) إلى السلة');
+    alert('تمت إضافة ' + name + ' (' + size + ') إلى السلة');
+  }
+
+  function addBundleToCart(bundleId, label, price) {
+    const existing = cart.find((item) => item.id === bundleId);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({ id: bundleId, name: label, size: 'عرض بادي سبلاش', price, qty: 1 });
+    }
+    renderCart();
+    alert('تمت إضافة ' + label + ' إلى السلة');
   }
 
   function removeFromCart(index) {
@@ -559,7 +633,7 @@
 
       row.innerHTML = `
         <td>${item.name}</td>
-        <td>${item.size} مللي</td>
+        <td>${item.size}</td>
         <td>${item.qty}</td>
         <td>${item.price} جنيه</td>
         <td>${itemTotal} جنيه</td>
@@ -591,7 +665,7 @@
     let itemsText = cart
       .map(
         (item) =>
-          `- ${item.name} | حجم: ${item.size} مللي | كمية: ${item.qty} | سعر الوحدة: ${item.price} | الإجمالي: ${item.price * item.qty}`
+          `- ${item.name} | الحجم / العرض: ${item.size} | كمية: ${item.qty} | سعر الوحدة: ${item.price} | الإجمالي: ${item.price * item.qty}`
       )
       .join('%0A');
 
@@ -611,4 +685,3 @@
 </script>
 </body>
 </html>
-
