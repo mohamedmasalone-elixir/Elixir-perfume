@@ -3,428 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر العطور الفاخر</title>
+    <title>متجر عطور إيليكسير</title>
     <style>
-        body {
-            margin: 0;
-            font-family: "Arial", sans-serif;
-            background: #f7f7f7;
-            color: #222;
-        }
+        body { margin: 0; font-family: "Arial", sans-serif; background: #f7f7f7; }
         a { text-decoration: none; }
-
-        /* شريط علوي */
-        header {
-            background: #111;
-            color: #fff;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-        }
-        nav a {
-            margin: 0 10px;
-            color: #fff;
-            font-size: 14px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .cart-icon {
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        /* الهيرو */
-        .hero {
-            background: url('https://images.unsplash.com/photo-1585386959984-a4155223f36e') center/cover;
-            height: 280px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-            padding: 0 10px;
-        }
-        .hero h1 {
-            font-size: 32px;
-            margin: 0 0 10px;
-        }
-        .hero p {
-            margin: 0 0 15px;
-        }
-        .btn-main {
-            padding: 10px 20px;
-            background: #111;
-            color: #fff;
-            border-radius: 20px;
-            font-size: 14px;
-        }
-
-        /* أقسام عامة */
-        section {
-            padding: 30px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-        h2.section-title {
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-size: 22px;
-            text-align: center;
-        }
-
-        /* المنتجات */
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            padding: 15px;
-            text-align: center;
-        }
-        .card img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .card h3 {
-            margin: 10px 0 5px;
-        }
-        .price {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 8px 14px;
-            background: #111;
-            color: #fff;
-            border-radius: 6px;
-            font-size: 13px;
-            cursor: pointer;
-        }
-        .btn.secondary {
-            background: #555;
-        }
-
-        /* العروض */
-        .offers {
-            background: #fff7e6;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        .offers-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 15px;
-        }
-        .offer-item {
-            background: #fff;
-            padding: 15px;
-            border-radius: 10px;
-        }
-
-        /* من نحن */
-        .about {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            line-height: 1.8;
-        }
-
-        /* تواصل معنا */
-        .contact {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        .contact form {
-            display: grid;
-            gap: 10px;
-        }
-        .contact input,
-        .contact textarea {
-            padding: 8px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            font-family: inherit;
-        }
-        .contact textarea { min-height: 80px; }
-
-        /* السلة */
-        .cart {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            overflow-x: auto;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 8px;
-            border-bottom: 1px solid #eee;
-            text-align: center;
-            font-size: 14px;
-        }
-        .cart-summary {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0 0;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        footer {
-            background: #111;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 30px;
-            font-size: 13px;
-        }
-
-        @media (max-width: 600px) {
-            header { flex-wrap: wrap; gap: 10px; }
-            nav { width: 100%; text-align: center; }
-        }
+        header { background: #111; color: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; }
+        nav a { color: #fff; margin: 0 10px; }
+        .hero { background: #000 url('YOUR-HERO-IMAGE') center/cover no-repeat; height: 260px; display: flex; justify-content: center; align-items: center; color: #fff; font-size: 32px; font-weight: bold; text-align: center; }
+        section { padding: 30px 20px; max-width: 1200px; margin: auto; }
+        h2 { text-align: center; margin-bottom: 25px; }
+        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        .card { background: #fff; padding: 15px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; }
+        .card img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; }
+        .btn { background:#111; color:white; padding:8px 15px; border-radius:6px; font-size:14px; cursor:pointer; display:inline-block; margin-top:10px; }
+        footer { background:#111; color:white; padding:12px; text-align:center; margin-top:30px; }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">متجر العطور الفاخر</div>
-        <nav>
-            <a href="#products">المنتجات</a>
-            <a href="#offers">العروض</a>
-            <a href="#about">من نحن</a>
-            <a href="#contact">تواصل</a>
-            <a href="#cart" class="cart-icon">السلة (<span id="cart-count">0</span>)</a>
-        </nav>
-    </header>
+<header>
+    <div class="logo">متجر إيليكسير للعطور</div>
+    <nav>
+        <a href="#men">رجالي</a>
+        <a href="#women">نسائي</a>
+        <a href="#contact">تواصل</a>
+    </nav>
+</header>
 
-    <section class="hero">
-        <h1>أفضل عطور شرقية وغربية</h1>
-        <p>جودة عالية، ثبات وفوحان يدوم لساعات طويلة</p>
-        <a href="#products" class="btn-main">تسوق الآن</a>
-    </section>
+<section class="hero">عطور فاخرة – ثبات وفوحان قوي</section>
 
-    <!-- المنتجات -->
-    <section id="products">
-        <h2 class="section-title">منتجاتنا</h2>
-        <div class="products">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1600180758890-e1e53f98f9a7" alt="Perfume">
-                <h3>عطر رجالي فاخر</h3>
-                <p class="price">250 جنيه</p>
-                <button class="btn" onclick="addToCart('p1','عطر رجالي فاخر',250)">إضافة للسلة</button>
-            </div>
+<!-- ========================= -->
+<!--      عطور رجالي           -->
+<!-- ========================= -->
+<section id="men">
+<h2>عطور رجالي</h2>
+<div class="products">
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07f" alt="Perfume">
-                <h3>عطر نسائي مميز</h3>
-                <p class="price">300 جنيه</p>
-                <button class="btn" onclick="addToCart('p2','عطر نسائي مميز',300)">إضافة للسلة</button>
-            </div>
+    <div class="card">
+        <img src="IMAGE1" alt="Aqua di Gio">
+        <h3>أكوا دي جيو</h3>
+        <p class="price">سعر: 250 جنيه</p>
+    </div>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1598908314716-6b49791b7a51" alt="Perfume">
-                <h3>عطر للجنسين</h3>
-                <p class="price">280 جنيه</p>
-                <button class="btn" onclick="addToCart('p3','عطر للجنسين',280)">إضافة للسلة</button>
-            </div>
-        </div>
-    </section>
+    <div class="card">
+        <img src="IMAGE2" alt="Stronger With You">
+        <h3>سترونجر ويذ يو</h3>
+        <p class="price">سعر: 280 جنيه</p>
+    </div>
 
-    <!-- العروض -->
-    <section id="offers" class="offers">
-        <h2 class="section-title">عروض خاصة</h2>
-        <div class="offers-list">
-            <div class="offer-item">
-                <h3>عرض 1</h3>
-                <p>أي 2 عطور 100 مل بسعر 450 جنيه بدلاً من 500 جنيه.</p>
-            </div>
-            <div class="offer-item">
-                <h3>عرض 2</h3>
-                <p>عند شراء 3 عطور تحصل على شحن مجاني داخل المدينة.</p>
-            </div>
-            <div class="offer-item">
-                <h3>عرض 3</h3>
-                <p>خصم 10% على أول طلبية عند استخدام كود: WELCOME10</p>
-            </div>
-        </div>
-    </section>
+    <div class="card">
+        <img src="IMAGE3" alt="Sauvage">
+        <h3>سوفاج</h3>
+        <p class="price">سعر: 300 جنيه</p>
+    </div>
 
-    <!-- من نحن -->
-    <section id="about" class="about">
-        <h2 class="section-title">من نحن</h2>
-        <p style="padding: 0 15px 20px;">
-            متجر العطور الفاخر متخصص في بيع أفضل أنواع العطور المركّزة والثابتة.
-            نوفّر تشكيلة واسعة من العطور الشرقية والغربية، مع إمكانية تفصيل الروائح حسب رغبة العميل.
-            هدفنا تقديم تجربة تسوق مريحة وأسعار مناسبة مع الحفاظ على أعلى جودة.
-        </p>
-    </section>
+    <div class="card">
+        <img src="IMAGE4" alt="Lacoste White">
+        <h3>لاكوست الأبيض</h3>
+        <p class="price">سعر: 230 جنيه</p>
+    </div>
 
-    <!-- تواصل معنا -->
-    <section id="contact" class="contact">
-        <h2 class="section-title">تواصل معنا</h2>
-        <div style="padding: 0 15px 20px;">
-            <form onsubmit="sendContact(event)">
-                <input type="text" id="name" placeholder="الاسم" required>
-                <input type="tel" id="phone" placeholder="رقم الهاتف" required>
-                <textarea id="message" placeholder="رسالتك / طلبك"></textarea>
-                <button type="submit" class="btn">إرسال عبر واتساب</button>
-            </form>
-            <p style="margin-top:10px; font-size:13px;">أو تواصل مباشرة على واتساب: <a href="https://wa.me/201000000000" target="_blank">اضغط هنا</a></p>
-        </div>
-    </section>
+    <div class="card">
+        <img src="IMAGE5" alt="Tobacco Vanille">
+        <h3>توباكو فانيلا</h3>
+        <p class="price">سعر: 320 جنيه</p>
+    </div>
 
-    <!-- السلة -->
-    <section id="cart" class="cart">
-        <h2 class="section-title">سلة المشتريات</h2>
-        <div style="padding: 0 15px 20px;">
-            <div style="overflow-x:auto;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>المنتج</th>
-                            <th>الكمية</th>
-                            <th>السعر للوحدة</th>
-                            <th>الإجمالي</th>
-                            <th>حذف</th>
-                        </tr>
-                    </thead>
-                    <tbody id="cart-items">
-                        <tr><td colspan="5">السلة فارغة حالياً</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="cart-summary">
-                <div>الإجمالي الكلي: <strong><span id="cart-total">0</span> جنيه</strong></div>
-                <button class="btn" onclick="checkout()">إتمام الدفع</button>
-            </div>
-            <p style="font-size:12px; margin-top:8px;">* عند الضغط على "إتمام الدفع" سيتم تحويلك لصفحة الدفع أو إرسال طلب عبر واتساب حسب الإعداد.</p>
-        </div>
-    </section>
+    <div class="card">
+        <img src="IMAGE6" alt="Alexandria II">
+        <h3>الكسندريا 2</h3>
+        <p class="price">سعر: 350 جنيه</p>
+    </div>
 
-    <footer>
-        © 2025 جميع الحقوق محفوظة – متجر العطور الفاخر
-    </footer>
+    <div class="card">
+        <img src="IMAGE7" alt="Black Afgano">
+        <h3>بلاك أفغانو</h3>
+        <p class="price">سعر: 340 جنيه</p>
+    </div>
 
-    <script>
-        // ----------------------
-        // إدارة السلة
-        // ----------------------
-        let cart = [];
+    <div class="card">
+        <img src="IMAGE8" alt="Oud Ispahan">
+        <h3>عود أصفهان</h3>
+        <p class="price">سعر: 360 جنيه</p>
+    </div>
 
-        function addToCart(id, name, price) {
-            const existing = cart.find(item => item.id === id);
-            if (existing) {
-                existing.qty += 1;
-            } else {
-                cart.push({ id, name, price, qty: 1 });
-            }
-            renderCart();
-        }
+</div>
+</section>
 
-        function removeFromCart(id) {
-            cart = cart.filter(item => item.id !== id);
-            renderCart();
-        }
 
-        function renderCart() {
-            const tbody = document.getElementById('cart-items');
-            const countSpan = document.getElementById('cart-count');
-            const totalSpan = document.getElementById('cart-total');
+<!-- ========================= -->
+<!--      عطور نسائي           -->
+<!-- ========================= -->
+<section id="women">
+<h2>عطور نسائي</h2>
+<div class="products">
 
-            tbody.innerHTML = '';
+    <div class="card">
+        <img src="IMAGE9" alt="Libre">
+        <h3>ليبر</h3>
+        <p class="price">سعر: 260 جنيه</p>
+    </div>
 
-            if (cart.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="5">السلة فارغة حالياً</td></tr>';
-                countSpan.textContent = '0';
-                totalSpan.textContent = '0';
-                return;
-            }
+    <div class="card">
+        <img src="IMAGE10" alt="Coco Chanel">
+        <h3>كوكو دي شانيل</h3>
+        <p class="price">سعر: 320 جنيه</p>
+    </div>
 
-            let total = 0;
-            let count = 0;
+    <div class="card">
+        <img src="IMAGE11" alt="Kayali 28">
+        <h3>كيالي 28</h3>
+        <p class="price">سعر: 300 جنيه</p>
+    </div>
 
-            cart.forEach(item => {
-                const row = document.createElement('tr');
-                const itemTotal = item.price * item.qty;
-                total += itemTotal;
-                count += item.qty;
+    <div class="card">
+        <img src="IMAGE12" alt="Erapora">
+        <h3>أربابورا</h3>
+        <p class="price">سعر: 280 جنيه</p>
+    </div>
 
-                row.innerHTML = `
-                    <td>${item.name}</td>
-                    <td>${item.qty}</td>
-                    <td>${item.price} جنيه</td>
-                    <td>${itemTotal} جنيه</td>
-                    <td><button class="btn secondary" onclick="removeFromCart('${item.id}')">حذف</button></td>
-                `;
+    <div class="card">
+        <img src="IMAGE13" alt="Women of The World">
+        <h3>نساء العالم</h3>
+        <p class="price">سعر: 240 جنيه</p>
+    </div>
 
-                tbody.appendChild(row);
-            });
+    <div class="card">
+        <img src="IMAGE14" alt="Very Good Girl">
+        <h3>فيري جود جيرل</h3>
+        <p class="price">سعر: 320 جنيه</p>
+    </div>
 
-            countSpan.textContent = count;
-            totalSpan.textContent = total;
-        }
+    <div class="card">
+        <img src="IMAGE15" alt="Very Sexy Now">
+        <h3>فيري سكس ناو</h3>
+        <p class="price">سعر: 250 جنيه</p>
+    </div>
 
-        // ----------------------
-        // وسيلة الدفع / إرسال الطلب
-        // ----------------------
+    <div class="card">
+        <img src="IMAGE16" alt="Khamra">
+        <h3>خمرة</h3>
+        <p class="price">سعر: 340 جنيه</p>
+    </div>
 
-        // ضع هنا رابط صفحة الدفع الخاصة بك (PayPal, صفحة بنك، فوري، الخ)
-        // مثلاً: const PAYMENT_URL_BASE = "https://your-payment-link.com/pay";
-        const PAYMENT_URL_BASE = "https://example.com/pay"; // عدّل هذا الرابط
+</div>
+</section>
 
-        function checkout() {
-            if (cart.length === 0) {
-                alert('السلة فارغة. أضف بعض المنتجات أولاً.');
-                return;
-            }
+<section>
+    <h2>متوفر لدينا أنواع أخرى عديدة</h2>
+    <p style="text-align:center; font-size:18px;">للاستفسار وطلب أي نوع آخر برجاء التواصل عبر الواتساب</p>
+    <p style="text-align:center; font-size:18px;"><a href="https://wa.me/201000000000" class="btn">تواصل واتساب</a></p>
+</section>
 
-            const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-            const details = cart.map(item => `${item.name} x${item.qty}`).join(', ');
 
-            // مثال 1: فتح صفحة دفع عامة مع المبلغ
-            // const url = `${PAYMENT_URL_BASE}?amount=${encodeURIComponent(total)}&details=${encodeURIComponent(details)}`;
-            // window.open(url, '_blank');
+<footer>
+    © 2025 متجر إيليكسير للعطور – جميع الحقوق محفوظة
+</footer>
 
-            // مثال 2: إرسال الطلب عبر واتساب (أسهل شيء بدون برمجة سيرفر)
-            const phone = '201000000000'; // ضع رقم الواتساب الخاص بك بدون +
-            const msg = `طلب جديد من المتجر:%0A${details}%0Aالإجمالي: ${total} جنيه`;
-            const waUrl = `https://wa.me/${phone}?text=${msg}`;
-            window.open(waUrl, '_blank');
-        }
-
-        // ----------------------
-        // إرسال نموذج التواصل عبر واتساب
-        // ----------------------
-        function sendContact(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            const waPhone = '201000000000'; // نفس رقم الواتساب أو رقم مختلف
-            const text = `استفسار جديد من الموقع:%0Aالاسم: ${name}%0Aالهاتف: ${phone}%0Aالرسالة: ${message}`;
-            const url = `https://wa.me/${waPhone}?text=${text}`;
-            window.open(url, '_blank');
-        }
-    </script>
 </body>
 </html>
