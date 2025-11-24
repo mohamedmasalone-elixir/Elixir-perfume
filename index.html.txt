@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر عطور إيليكسير</title>
+    <style>
+        body { margin: 0; font-family: "Arial", sans-serif; background: #f7f7f7; }
+        a { text-decoration: none; }
+        header { background: #111; color: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; }
+        nav a { color: #fff; margin: 0 10px; }
+        .hero { background: #000 url('YOUR-HERO-IMAGE') center/cover no-repeat; height: 260px; display: flex; justify-content: center; align-items: center; color: #fff; font-size: 32px; font-weight: bold; text-align: center; }
+        section { padding: 30px 20px; max-width: 1200px; margin: auto; }
+        h2 { text-align: center; margin-bottom: 25px; }
+        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        .card { background: #fff; padding: 15px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; }
+        .card img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; }
+        .btn { background:#111; color:white; padding:8px 15px; border-radius:6px; font-size:14px; cursor:pointer; display:inline-block; margin-top:10px; }
+        footer { background:#111; color:white; padding:12px; text-align:center; margin-top:30px; }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">متجر إيليكسير للعطور</div>
+    <nav>
+        <a href="#men">رجالي</a>
+        <a href="#women">نسائي</a>
+        <a href="#contact">تواصل</a>
+    </nav>
+</header>
+
+<section class="hero">عطور فاخرة – ثبات وفوحان قوي</section>
+
+<!-- ========================= -->
+<!--      عطور رجالي           -->
+<!-- ========================= -->
+<section id="men">
+<h2>عطور رجالي</h2>
+<div class="products">
+
+    <div class="card">
+        <img src="IMAGE1" alt="Aqua di Gio">
+        <h3>أكوا دي جيو</h3>
+        <p class="price">سعر: 250 جنيه</p>
+    </div>
+
+    <div class="card">
+        <img src="IMAGE2" alt="Stronger With You">
+        <h3>سترونجر ويذ يو</h3>
+        <p class="price">سعر: 280 جنيه</p>
+    </div>
+
+    <div class="card">
+        <img src="IMAGE3" alt="Sauvage">
+        <h3>سوفاج</h3>
+        <p class="price">سعر: 300 جنيه</p>
+    </div>
+
+    <div class="card">
+        <img src="IMAGE4" alt="Lacoste White">
+        <h3>لاكوست الأبيض</h3>
+        <p class="price">سعر: 230 جنيه</p>
+    </div>
+
+    <div class="card">
+        <img src="IMAGE5" alt="Tobacco Vanille">
+        <h3>توباكو فانيلا</h3>
+        <p class="price">سعر: 320 جنيه</p>
+    </div>
+
+    <div class="card">
+        <img src="IMAGE6" alt="Alexandria II">
+        <h3>الكسندريا 2</h3>
+        <p class="price">سعر: 350 جنيه</p>
+    </div>
+
+    <div class="card">
+        <img src="IMAGE7" alt="Black Afgano">
+        <h3>بلاك أفغانو</h3>
+        <p class="price">سعر: 340 جنيه</p>
+    </div>
+
+    <div class="card">
+        <img src="IMAGE8" alt="Oud Ispahan">
+        <h3>عود أصفهان</h3>
+        <p class="price">سعر: 360 جنيه</p>
+    </div>
+
+</div>
+</section>
+
+
+<!-- ========================= -->
+<!--      عطور نسائي           -->
+<!-- ========================= -->
+<section id="women">
+<h2>عطور نسائي</h2>
+<div class="products">
+
+    <div class="card">
+        <img src="IMAGE9" alt="Libre">
+        <h3>ليبر</h3>
+        <p class="price">سعر: 260 جنيه</p>
+    </div>
+
+    <div class="card">
+        <img src="IMAGE10" alt="Coco Chanel">
+        <h3>كوكو دي شانيل</h3>
+        <p class="price">سعر: 320 جنيه</p>
+    </div>
+
+    <div class="card">
+        <img src="IMAGE11" alt="Kayali 28">
+        <h3>كيالي 28</h3>
+        <p class="price">سعر: 300 جنيه</p>
+    </div>
+
+    <div class="card">
+        <img src="IMAGE12" alt="Erapora">
+        <h3>أربابورا</h3>
+        <p class="price">سعر: 280 جنيه</p>
+    </div>
+
+    <div class="card">
+        <img src="IMAGE13" alt="Women of The World">
+        <h3>نساء العالم</h3>
+        <p class="price">سعر: 240 جنيه</p>
+    </div>
+
+    <div class="card">
+        <img src="IMAGE14" alt="Very Good Girl">
+        <h3>فيري جود جيرل</h3>
+        <p class="price">سعر: 320 جنيه</p>
+    </div>
+
+    <div class="card">
+        <img src="IMAGE15" alt="Very Sexy Now">
+        <h3>فيري سكس ناو</h3>
+        <p class="price">سعر: 250 جنيه</p>
+    </div>
+
+    <div class="card">
+        <img src="IMAGE16" alt="Khamra">
+        <h3>خمرة</h3>
+        <p class="price">سعر: 340 جنيه</p>
+    </div>
+
+</div>
+</section>
+
+<section>
+    <h2>متوفر لدينا أنواع أخرى عديدة</h2>
+    <p style="text-align:center; font-size:18px;">للاستفسار وطلب أي نوع آخر برجاء التواصل عبر الواتساب</p>
+    <p style="text-align:center; font-size:18px;"><a href="https://wa.me/201000000000" class="btn">تواصل واتساب</a></p>
+</section>
+
+
+<footer>
+    © 2025 متجر إيليكسير للعطور – جميع الحقوق محفوظة
+</footer>
+
+</body>
+</html>
