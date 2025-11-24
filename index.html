@@ -1,163 +1,613 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر عطور إيليكسير</title>
-    <style>
-        body { margin: 0; font-family: "Arial", sans-serif; background: #f7f7f7; }
-        a { text-decoration: none; }
-        header { background: #111; color: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; }
-        nav a { color: #fff; margin: 0 10px; }
-        .hero { background: #000 url('YOUR-HERO-IMAGE') center/cover no-repeat; height: 260px; display: flex; justify-content: center; align-items: center; color: #fff; font-size: 32px; font-weight: bold; text-align: center; }
-        section { padding: 30px 20px; max-width: 1200px; margin: auto; }
-        h2 { text-align: center; margin-bottom: 25px; }
-        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-        .card { background: #fff; padding: 15px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; }
-        .card img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; }
-        .btn { background:#111; color:white; padding:8px 15px; border-radius:6px; font-size:14px; cursor:pointer; display:inline-block; margin-top:10px; }
-        footer { background:#111; color:white; padding:12px; text-align:center; margin-top:30px; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>متجر إيليكسير للعطور</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Arial", sans-serif;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    header {
+      background: #111;
+      color: #fff;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: #000 url("YOUR-HERO-IMAGE") center/cover no-repeat;
+      height: 260px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      font-size: 28px;
+      font-weight: bold;
+      padding: 0 10px;
+    }
+
+    section {
+      padding: 30px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 10px;
+      background: #ddd;
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+    }
+
+    .price {
+      font-weight: bold;
+      margin: 6px 0;
+    }
+
+    .price-options {
+      width: 100%;
+      padding: 6px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 4px;
+      font-family: inherit;
+      font-size: 13px;
+    }
+
+    .btn {
+      background: #111;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 10px;
+      border: none;
+    }
+
+    .btn.secondary {
+      background: #555;
+    }
+
+    .note {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    /* Cart & checkout */
+    .cart, .checkout {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      margin-top: 20px;
+    }
+
+    .cart-inner, .checkout-inner {
+      padding: 0 15px 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    th, td {
+      padding: 8px;
+      border-bottom: 1px solid #eee;
+      text-align: center;
+    }
+
+    .cart-summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .checkout-inner form {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .checkout-inner input,
+    .checkout-inner textarea {
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    .checkout-inner textarea {
+      min-height: 70px;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      padding: 12px;
+      text-align: center;
+      margin-top: 30px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      nav {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero {
+        font-size: 22px;
+      }
+    }
+  </style>
 </head>
 <body>
 <header>
-    <div class="logo">متجر إيليكسير للعطور</div>
-    <nav>
-        <a href="#men">رجالي</a>
-        <a href="#women">نسائي</a>
-        <a href="#contact">تواصل</a>
-    </nav>
+  <div class="logo">متجر إيليكسير للعطور</div>
+  <nav>
+    <a href="#men">رجالي</a>
+    <a href="#women">نسائي</a>
+    <a href="#cart">السلة</a>
+    <a href="#checkout">شيك آوت</a>
+  </nav>
 </header>
 
-<section class="hero">عطور فاخرة – ثبات وفوحان قوي</section>
+<section class="hero">
+  عطور فاخرة – ثبات وفوحان قوي
+</section>
 
 <!-- ========================= -->
 <!--      عطور رجالي           -->
 <!-- ========================= -->
 <section id="men">
-<h2>عطور رجالي</h2>
-<div class="products">
+  <h2>عطور رجالي</h2>
+  <div class="products">
 
-    <div class="card">
-        <img src="IMAGE1" alt="Aqua di Gio">
-        <h3>أكوا دي جيو</h3>
-        <p class="price">سعر: 250 جنيه</p>
+    <div class="card" data-product-id="m1">
+      <img src="IMAGE1" alt="أكوا دي جيو" />
+      <h3>أكوا دي جيو</h3>
+      <p class="price" id="price-m1">السعر: 200 جنيه</p>
+      <select class="price-options" onchange="updateDisplayedPrice('m1', this)">
+        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+      </select>
+      <button class="btn" onclick="addToCart('m1')">إضافة للسلة</button>
     </div>
 
-    <div class="card">
-        <img src="IMAGE2" alt="Stronger With You">
-        <h3>سترونجر ويذ يو</h3>
-        <p class="price">سعر: 280 جنيه</p>
+    <div class="card" data-product-id="m2">
+      <img src="IMAGE2" alt="سترونجر ويذ يو" />
+      <h3>سترونجر ويذ يو</h3>
+      <p class="price" id="price-m2">السعر: 200 جنيه</p>
+      <select class="price-options" onchange="updateDisplayedPrice('m2', this)">
+        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+      </select>
+      <button class="btn" onclick="addToCart('m2')">إضافة للسلة</button>
     </div>
 
-    <div class="card">
-        <img src="IMAGE3" alt="Sauvage">
-        <h3>سوفاج</h3>
-        <p class="price">سعر: 300 جنيه</p>
+    <div class="card" data-product-id="m3">
+      <img src="IMAGE3" alt="سوفاج" />
+      <h3>سوفاج</h3>
+      <p class="price" id="price-m3">السعر: 200 جنيه</p>
+      <select class="price-options" onchange="updateDisplayedPrice('m3', this)">
+        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+      </select>
+      <button class="btn" onclick="addToCart('m3')">إضافة للسلة</button>
     </div>
 
-    <div class="card">
-        <img src="IMAGE4" alt="Lacoste White">
-        <h3>لاكوست الأبيض</h3>
-        <p class="price">سعر: 230 جنيه</p>
+    <div class="card" data-product-id="m4">
+      <img src="IMAGE4" alt="لاكوست الأبيض" />
+      <h3>لاكوست الأبيض</h3>
+      <p class="price" id="price-m4">السعر: 200 جنيه</p>
+      <select class="price-options" onchange="updateDisplayedPrice('m4', this)">
+        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+      </select>
+      <button class="btn" onclick="addToCart('m4')">إضافة للسلة</button>
     </div>
 
-    <div class="card">
-        <img src="IMAGE5" alt="Tobacco Vanille">
-        <h3>توباكو فانيلا</h3>
-        <p class="price">سعر: 320 جنيه</p>
+    <div class="card" data-product-id="m5">
+      <img src="IMAGE5" alt="توباكو فانيلا" />
+      <h3>توباكو فانيلا</h3>
+      <p class="price" id="price-m5">السعر: 200 جنيه</p>
+      <select class="price-options" onchange="updateDisplayedPrice('m5', this)">
+        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+      </select>
+      <button class="btn" onclick="addToCart('m5')">إضافة للسلة</button>
     </div>
 
-    <div class="card">
-        <img src="IMAGE6" alt="Alexandria II">
-        <h3>الكسندريا 2</h3>
-        <p class="price">سعر: 350 جنيه</p>
+    <div class="card" data-product-id="m6">
+      <img src="IMAGE6" alt="الكسندريا 2" />
+      <h3>الكسندريا 2</h3>
+      <p class="price" id="price-m6">السعر: 200 جنيه</p>
+      <select class="price-options" onchange="updateDisplayedPrice('m6', this)">
+        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+      </select>
+      <button class="btn" onclick="addToCart('m6')">إضافة للسلة</button>
     </div>
 
-    <div class="card">
-        <img src="IMAGE7" alt="Black Afgano">
-        <h3>بلاك أفغانو</h3>
-        <p class="price">سعر: 340 جنيه</p>
+    <div class="card" data-product-id="m7" data-special="black-afgano">
+      <img src="IMAGE7" alt="بلاك أفغانو" />
+      <h3>بلاك أفغانو</h3>
+      <p class="price" id="price-m7">السعر: 450 جنيه</p>
+      <select class="price-options" onchange="updateDisplayedPrice('m7', this)">
+        <option data-price="450" data-size="30">30 مللي - 450 جنيه</option>
+        <option data-price="650" data-size="50">50 مللي - 650 جنيه</option>
+        <option data-price="950" data-size="100">100 مللي - 950 جنيه</option>
+      </select>
+      <button class="btn" onclick="addToCart('m7')">إضافة للسلة</button>
     </div>
 
-    <div class="card">
-        <img src="IMAGE8" alt="Oud Ispahan">
-        <h3>عود أصفهان</h3>
-        <p class="price">سعر: 360 جنيه</p>
+    <div class="card" data-product-id="m8">
+      <img src="IMAGE8" alt="عود أصفهان" />
+      <h3>عود أصفهان</h3>
+      <p class="price" id="price-m8">السعر: 200 جنيه</p>
+      <select class="price-options" onchange="updateDisplayedPrice('m8', this)">
+        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+      </select>
+      <button class="btn" onclick="addToCart('m8')">إضافة للسلة</button>
     </div>
 
-</div>
+  </div>
 </section>
-
 
 <!-- ========================= -->
 <!--      عطور نسائي           -->
 <!-- ========================= -->
 <section id="women">
-<h2>عطور نسائي</h2>
-<div class="products">
+  <h2>عطور نسائي</h2>
+  <div class="products">
 
-    <div class="card">
-        <img src="IMAGE9" alt="Libre">
-        <h3>ليبر</h3>
-        <p class="price">سعر: 260 جنيه</p>
+    <div class="card" data-product-id="w1">
+      <img src="IMAGE9" alt="ليبر" />
+      <h3>ليبر</h3>
+      <p class="price" id="price-w1">السعر: 200 جنيه</p>
+      <select class="price-options" onchange="updateDisplayedPrice('w1', this)">
+        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+      </select>
+      <button class="btn" onclick="addToCart('w1')">إضافة للسلة</button>
     </div>
 
-    <div class="card">
-        <img src="IMAGE10" alt="Coco Chanel">
-        <h3>كوكو دي شانيل</h3>
-        <p class="price">سعر: 320 جنيه</p>
+    <div class="card" data-product-id="w2">
+      <img src="IMAGE10" alt="كوكو دي شانيل" />
+      <h3>كوكو دي شانيل</h3>
+      <p class="price" id="price-w2">السعر: 200 جنيه</p>
+      <select class="price-options" onchange="updateDisplayedPrice('w2', this)">
+        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+      </select>
+      <button class="btn" onclick="addToCart('w2')">إضافة للسلة</button>
     </div>
 
-    <div class="card">
-        <img src="IMAGE11" alt="Kayali 28">
-        <h3>كيالي 28</h3>
-        <p class="price">سعر: 300 جنيه</p>
+    <div class="card" data-product-id="w3">
+      <img src="IMAGE11" alt="كيالي 28" />
+      <h3>كيالي 28</h3>
+      <p class="price" id="price-w3">السعر: 200 جنيه</p>
+      <select class="price-options" onchange="updateDisplayedPrice('w3', this)">
+        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+      </select>
+      <button class="btn" onclick="addToCart('w3')">إضافة للسلة</button>
     </div>
 
-    <div class="card">
-        <img src="IMAGE12" alt="Erapora">
-        <h3>أربابورا</h3>
-        <p class="price">سعر: 280 جنيه</p>
+    <div class="card" data-product-id="w4">
+      <img src="IMAGE12" alt="أربابورا" />
+      <h3>أربابورا</h3>
+      <p class="price" id="price-w4">السعر: 200 جنيه</p>
+      <select class="price-options" onchange="updateDisplayedPrice('w4', this)">
+        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+      </select>
+      <button class="btn" onclick="addToCart('w4')">إضافة للسلة</button>
     </div>
 
-    <div class="card">
-        <img src="IMAGE13" alt="Women of The World">
-        <h3>نساء العالم</h3>
-        <p class="price">سعر: 240 جنيه</p>
+    <div class="card" data-product-id="w5">
+      <img src="IMAGE13" alt="نساء العالم" />
+      <h3>نساء العالم</h3>
+      <p class="price" id="price-w5">السعر: 200 جنيه</p>
+      <select class="price-options" onchange="updateDisplayedPrice('w5', this)">
+        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+      </select>
+      <button class="btn" onclick="addToCart('w5')">إضافة للسلة</button>
     </div>
 
-    <div class="card">
-        <img src="IMAGE14" alt="Very Good Girl">
-        <h3>فيري جود جيرل</h3>
-        <p class="price">سعر: 320 جنيه</p>
+    <div class="card" data-product-id="w6">
+      <img src="IMAGE14" alt="فيري جود جيرل" />
+      <h3>فيري جود جيرل</h3>
+      <p class="price" id="price-w6">السعر: 200 جنيه</p>
+      <select class="price-options" onchange="updateDisplayedPrice('w6', this)">
+        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+      </select>
+      <button class="btn" onclick="addToCart('w6')">إضافة للسلة</button>
     </div>
 
-    <div class="card">
-        <img src="IMAGE15" alt="Very Sexy Now">
-        <h3>فيري سكس ناو</h3>
-        <p class="price">سعر: 250 جنيه</p>
+    <div class="card" data-product-id="w7">
+      <img src="IMAGE15" alt="فيري سكس ناو" />
+      <h3>فيري سكس ناو</h3>
+      <p class="price" id="price-w7">السعر: 200 جنيه</p>
+      <select class="price-options" onchange="updateDisplayedPrice('w7', this)">
+        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+      </select>
+      <button class="btn" onclick="addToCart('w7')">إضافة للسلة</button>
     </div>
 
-    <div class="card">
-        <img src="IMAGE16" alt="Khamra">
-        <h3>خمرة</h3>
-        <p class="price">سعر: 340 جنيه</p>
+    <div class="card" data-product-id="w8">
+      <img src="IMAGE16" alt="خمرة" />
+      <h3>خمرة</h3>
+      <p class="price" id="price-w8">السعر: 200 جنيه</p>
+      <select class="price-options" onchange="updateDisplayedPrice('w8', this)">
+        <option data-price="200" data-size="30">30 مللي - 200 جنيه</option>
+        <option data-price="300" data-size="50">50 مللي - 300 جنيه</option>
+        <option data-price="450" data-size="100">100 مللي - 450 جنيه</option>
+      </select>
+      <button class="btn" onclick="addToCart('w8')">إضافة للسلة</button>
     </div>
 
-</div>
+  </div>
+  <p class="note">متاح لدينا أنواع أخرى عديدة، للتفاصيل برجاء التواصل عبر الواتساب.</p>
 </section>
 
-<section>
-    <h2>متوفر لدينا أنواع أخرى عديدة</h2>
-    <p style="text-align:center; font-size:18px;">للاستفسار وطلب أي نوع آخر برجاء التواصل عبر الواتساب</p>
-    <p style="text-align:center; font-size:18px;"><a href="https://wa.me/201000000000" class="btn">تواصل واتساب</a></p>
+<!-- ========================= -->
+<!--      السلة                -->
+<!-- ========================= -->
+<section id="cart" class="cart">
+  <h2>سلة المشتريات</h2>
+  <div class="cart-inner">
+    <div style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>العطر</th>
+            <th>الحجم</th>
+            <th>الكمية</th>
+            <th>سعر الوحدة</th>
+            <th>الإجمالي</th>
+            <th>حذف</th>
+          </tr>
+        </thead>
+        <tbody id="cart-items">
+          <tr>
+            <td colspan="6">السلة فارغة حالياً</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cart-summary">
+      <div>إجمالي عدد القطع: <strong><span id="cart-count">0</span></strong></div>
+      <div>الإجمالي الكلي: <strong><span id="cart-total">0</span> جنيه</strong></div>
+    </div>
+  </div>
 </section>
 
+<!-- ========================= -->
+<!--      صفحة الشيك آوت       -->
+<!-- ========================= -->
+<section id="checkout" class="checkout">
+  <h2>إتمام الطلب (شيك آوت)</h2>
+  <div class="checkout-inner">
+    <p>من فضلك أدخل بياناتك وسيتم إرسال الطلب عبر الواتساب للتأكيد.</p>
+    <form onsubmit="submitOrder(event)">
+      <input type="text" id="customer-name" placeholder="الاسم" required />
+      <input type="tel" id="customer-phone" placeholder="رقم الهاتف" required />
+      <textarea id="customer-address" placeholder="العنوان بالتفصيل" required></textarea>
+      <textarea id="customer-notes" placeholder="ملاحظات إضافية (اختياري)"></textarea>
+      <button type="submit" class="btn">إرسال الطلب عبر واتساب</button>
+    </form>
+  </div>
+</section>
 
 <footer>
-    © 2025 متجر إيليكسير للعطور – جميع الحقوق محفوظة
+  © 2025 متجر إيليكسير للعطور – جميع الحقوق محفوظة
 </footer>
 
+<script>
+  const WHATSAPP_PHONE = '201558678781'; // 01558678781 بشكل دولي
+
+  let cart = [];
+
+  function updateDisplayedPrice(productId, selectEl) {
+    const selectedOption = selectEl.options[selectEl.selectedIndex];
+    const price = Number(selectedOption.getAttribute('data-price')) || 0;
+    const priceEl = document.getElementById('price-' + productId);
+    if (priceEl) {
+      priceEl.textContent = 'السعر: ' + price + ' جنيه';
+    }
+  }
+
+  function addToCart(productId) {
+    const card = document.querySelector('.card[data-product-id="' + productId + '"]');
+    if (!card) return;
+
+    const name = card.querySelector('h3').textContent.trim();
+    const selectEl = card.querySelector('.price-options');
+    const selectedOption = selectEl.options[selectEl.selectedIndex];
+    const size = selectedOption.getAttribute('data-size');
+    const price = Number(selectedOption.getAttribute('data-price')) || 0;
+
+    // نبحث لو نفس المنتج بنفس الحجم موجود
+    const existing = cart.find(
+      (item) => item.id === productId && item.size === size
+    );
+
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({ id: productId, name, size, price, qty: 1 });
+    }
+
+    renderCart();
+    alert('تمت إضافة ' + name + ' (' + size + ' مللي) إلى السلة');
+  }
+
+  function removeFromCart(index) {
+    cart.splice(index, 1);
+    renderCart();
+  }
+
+  function renderCart() {
+    const tbody = document.getElementById('cart-items');
+    const countSpan = document.getElementById('cart-count');
+    const totalSpan = document.getElementById('cart-total');
+
+    tbody.innerHTML = '';
+
+    if (cart.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="6">السلة فارغة حالياً</td></tr>';
+      countSpan.textContent = '0';
+      totalSpan.textContent = '0';
+      return;
+    }
+
+    let total = 0;
+    let count = 0;
+
+    cart.forEach((item, index) => {
+      const row = document.createElement('tr');
+      const itemTotal = item.price * item.qty;
+      total += itemTotal;
+      count += item.qty;
+
+      row.innerHTML = `
+        <td>${item.name}</td>
+        <td>${item.size} مللي</td>
+        <td>${item.qty}</td>
+        <td>${item.price} جنيه</td>
+        <td>${itemTotal} جنيه</td>
+        <td><button class="btn secondary" onclick="removeFromCart(${index})">حذف</button></td>
+      `;
+
+      tbody.appendChild(row);
+    });
+
+    countSpan.textContent = count;
+    totalSpan.textContent = total;
+  }
+
+  function submitOrder(event) {
+    event.preventDefault();
+
+    if (cart.length === 0) {
+      alert('السلة فارغة، أضف بعض العطور أولاً.');
+      return;
+    }
+
+    const name = document.getElementById('customer-name').value.trim();
+    const phone = document.getElementById('customer-phone').value.trim();
+    const address = document.getElementById('customer-address').value.trim();
+    const notes = document.getElementById('customer-notes').value.trim();
+
+    const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+    let itemsText = cart
+      .map(
+        (item) =>
+          `- ${item.name} | حجم: ${item.size} مللي | كمية: ${item.qty} | سعر الوحدة: ${item.price} | الإجمالي: ${item.price * item.qty}`
+      )
+      .join('%0A');
+
+    const msg =
+      `طلب جديد من موقع إيليكسير للعطور:%0A%0A` +
+      `الاسم: ${name}%0A` +
+      `رقم العميل: ${phone}%0A` +
+      `العنوان: ${address}%0A` +
+      (notes ? `ملاحظات: ${notes}%0A` : '') +
+      `%0A------------------%0A` +
+      `تفاصيل السلة:%0A${itemsText}%0A` +
+      `------------------%0Aالإجمالي الكلي: ${total} جنيه`;
+
+    const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${msg}`;
+    window.open(waUrl, '_blank');
+  }
+</script>
 </body>
 </html>
